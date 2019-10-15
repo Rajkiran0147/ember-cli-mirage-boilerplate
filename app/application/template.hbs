@@ -1,0 +1,11 @@
+{{#each employees as |employee|}}
+  {{employee.attributes.name}}
+  {{employee.attributes.age}}
+{{/each}}
+{{#if showAddEmployeeForm}}
+  {{input type="text" value=name}}
+  {{input type="number" value=age}}
+  <button {{action "addEmployee"}}>Save</button>
+{{/if}}
+<button {{action "showAddEmployeeForm"}}>Add</button>
+{{outlet}}
